@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Intro</title>
+
+        <style>
+            .paragraph {
+                color: red; 
+                font-size: 20px;
+            }
+            
+            /* .simple-selectors-container {
+                color: blue;
+            } */
+
+            .simple-selectors-container #title {
+                color: pink;
+            }
+
+            .simple-selectors-container p {
+                color: red;
+            }
+
+            .combinators-selectors-container span {
+                color: green;
+            }
+
+            .combinators-selectors-container > p {
+                color: blueviolet;
+            }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="global.css" />
+        <link rel="stylesheet" type="text/css" href="typography.css" />
+    </head>
+    <body>
+        <h2>Inline styles</h2>
+        <p style="color: blue; font-size: 20px;">This is a paragraph</p>
+        <hr>
+        <h2>Embedded styles</h2>
+        <p class="paragraph">This is a paragraph</p>
+        <hr>
+        <h2>External styles</h2>
+        <p class="paragraph-external">This is a paragraph</p>
+        <hr>
+        <h2>Simple selectors</h2>
+        <div class="simple-selectors-container">
+            <h3 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dicta.</h3>
+            <p id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, obcaecati laboriosam quisquam nulla consectetur nobis provident omnis earum temporibus similique reiciendis reprehenderit quas porro qui maiores ex perferendis, possimus quidem natus rerum quos! At rem cum, animi eius optio ipsam fuga, maxime quisquam quo vitae velit, alias beatae? Corporis, tempore.</p>
+            <p id="aditionalDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos quidem amet rerum repellat mollitia eveniet corrupti hic tempora inventore, molestiae sapiente labore officia quos ducimus nam fugit soluta pariatur voluptatibus consectetur repudiandae necessitatibus laboriosam provident laudantium. Quasi quo consectetur, voluptatem molestias ex nemo iste quisquam incidunt similique dolor recusandae iure! Dolores corrupti suscipit rerum cumque architecto amet aliquid non omnis autem odio? Rem perferendis, itaque quidem corporis rerum exercitationem sit aliquid porro maxime voluptatum vero tempora consequuntur sapiente voluptatibus laudantium ducimus harum tempore repellendus eligendi suscipit? Eligendi repudiandae voluptas consequatur, molestias repellat accusamus vel, facere dolor blanditiis aliquid alias.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officiis.</p>
+        <h2>Combinators selectors</h2>
+        <div class="combinators-selectors-container">
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dicta.</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, obcaecati laboriosam quisquam nulla consectetur nobis provident omnis earum temporibus similique reiciendis reprehenderit quas porro qui maiores ex perferendis, possimus quidem natus rerum quos! At rem cum, animi eius optio ipsam fuga, maxime quisquam quo vitae velit, alias beatae? Corporis, tempore.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur <span>adipisicing elit.</span> Est dignissimos quidem amet rerum repellat mollitia eveniet corrupti hic tempora inventore, molestiae sapiente labore officia quos ducimus nam fugit soluta pariatur voluptatibus consectetur repudiandae necessitatibus laboriosam provident laudantium. Quasi quo consectetur, voluptatem molestias ex nemo iste quisquam incidunt similique dolor recusandae iure! Dolores corrupti suscipit rerum cumque architecto amet aliquid non omnis autem odio? Rem perferendis, itaque quidem corporis rerum exercitationem sit aliquid porro maxime voluptatum vero tempora consequuntur sapiente voluptatibus laudantium ducimus harum tempore repellendus eligendi suscipit? Eligendi repudiandae voluptas consequatur, molestias repellat accusamus vel, facere dolor blanditiis aliquid alias.</p>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur <span>adipisicing elit.</span> Aliquid aliquam provident aspernatur quidem necessitatibus reiciendis, quia ullam, facere repellendus, vitae iure minus quibusdam nostrum nobis aut dolor possimus cupiditate soluta architecto ex? Nobis quidem deserunt accusamus fuga. Beatae aliquam incidunt reprehenderit a, distinctio temporibus dolores assumenda at? Tempore cupiditate aspernatur ipsum consequatur a fuga soluta ipsam fugit consequuntur dolorum ea harum, quas, eveniet corporis quod placeat esse voluptatum vero repellendus blanditiis distinctio debitis atque nesciunt. Aspernatur deserunt laboriosam alias fuga, facilis quibusdam assumenda perferendis enim, tempora sunt explicabo magnam minima maxime cum dolore ex ut, possimus mollitia obcaecati nam et.</p>
+            </div>
+        </div>
+    </body>
+</html>
