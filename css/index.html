@@ -1,64 +1,186 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>CSS Intro</title>
 
-        <style>
-            .paragraph {
+<head>
+    <title>CSS Intro</title>
+
+    <style>
+        /* .paragraph {
                 color: red; 
                 font-size: 20px;
-            }
-            
-            /* .simple-selectors-container {
+            } */
+
+        /* .simple-selectors-container {
                 color: blue;
             } */
 
-            .simple-selectors-container #title {
+        /* .simple-selectors-container #title {
                 color: pink;
             }
 
             .simple-selectors-container p {
                 color: red;
-            }
+            } */
 
-            .combinators-selectors-container span {
+        /* .combinators-selectors-container span {
                 color: green;
             }
 
             .combinators-selectors-container > p {
                 color: blueviolet;
-            }
-        </style>
+            } */
 
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <link rel="stylesheet" type="text/css" href="global.css" />
-        <link rel="stylesheet" type="text/css" href="typography.css" />
-    </head>
-    <body>
-        <h2>Inline styles</h2>
-        <p style="color: blue; font-size: 20px;">This is a paragraph</p>
-        <hr>
-        <h2>Embedded styles</h2>
-        <p class="paragraph">This is a paragraph</p>
-        <hr>
-        <h2>External styles</h2>
-        <p class="paragraph-external">This is a paragraph</p>
-        <hr>
-        <h2>Simple selectors</h2>
-        <div class="simple-selectors-container">
-            <h3 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dicta.</h3>
-            <p id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, obcaecati laboriosam quisquam nulla consectetur nobis provident omnis earum temporibus similique reiciendis reprehenderit quas porro qui maiores ex perferendis, possimus quidem natus rerum quos! At rem cum, animi eius optio ipsam fuga, maxime quisquam quo vitae velit, alias beatae? Corporis, tempore.</p>
-            <p id="aditionalDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos quidem amet rerum repellat mollitia eveniet corrupti hic tempora inventore, molestiae sapiente labore officia quos ducimus nam fugit soluta pariatur voluptatibus consectetur repudiandae necessitatibus laboriosam provident laudantium. Quasi quo consectetur, voluptatem molestias ex nemo iste quisquam incidunt similique dolor recusandae iure! Dolores corrupti suscipit rerum cumque architecto amet aliquid non omnis autem odio? Rem perferendis, itaque quidem corporis rerum exercitationem sit aliquid porro maxime voluptatum vero tempora consequuntur sapiente voluptatibus laudantium ducimus harum tempore repellendus eligendi suscipit? Eligendi repudiandae voluptas consequatur, molestias repellat accusamus vel, facere dolor blanditiis aliquid alias.</p>
+        /* .combinators-selectors-container + p {
+                color: red;
+            } */
+
+        /* .combinators-selectors-container ~ p {
+                color: blueviolet;
+            } */
+
+        /* Attribute-selectors */
+        /* [class*="external"] {
+                color:red;
+            } */
+
+        /* Pseudo classes */
+        /* a:link {
+            color: red;
+        }
+
+        a:visited {
+            color: yellow;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        a:active {
+            color: green;
+        }
+
+        .click-button {
+            background-color: orange;
+            color: white;
+            padding: 20px 5px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .click-button:hover {
+            background-color: tomato;
+            cursor: pointer;
+        }
+
+        .pseudo-classes p:first-child {
+            color: red;
+        } */
+
+        .paragraph::first-line {
+            color: red;
+        }
+
+        q::before {
+            content: "<<";
+            color: blue;
+        }
+
+        q::after {
+            content: ">>";
+            color: blue;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="global.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+    <link rel="stylesheet" type="text/css" href="typography.css" />
+</head>
+
+<body>
+    <h2>Inline styles</h2>
+    <p style="color: rgb(40, 225, 213); font-size: 20px;">This is a paragraph</p>
+    <hr>
+    <h2>Embedded styles</h2>
+    <p class="paragraph">This is a paragraph</p>
+    <hr>
+    <h2>External styles</h2>
+    <p class="paragraph-external test">This is a paragraph</p>
+    <hr>
+    <h2>Simple selectors</h2>
+    <div class="simple-selectors-container">
+        <h3 id="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dicta.</h3>
+        <p id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, obcaecati laboriosam
+            quisquam nulla consectetur nobis provident omnis earum temporibus similique reiciendis reprehenderit quas
+            porro qui maiores ex perferendis, possimus quidem natus rerum quos! At rem cum, animi eius optio ipsam fuga,
+            maxime quisquam quo vitae velit, alias beatae? Corporis, tempore.</p>
+        <p id="aditionalDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos quidem
+            amet rerum repellat mollitia eveniet corrupti hic tempora inventore, molestiae sapiente labore officia quos
+            ducimus nam fugit soluta pariatur voluptatibus consectetur repudiandae necessitatibus laboriosam provident
+            laudantium. Quasi quo consectetur, voluptatem molestias ex nemo iste quisquam incidunt similique dolor
+            recusandae iure! Dolores corrupti suscipit rerum cumque architecto amet aliquid non omnis autem odio? Rem
+            perferendis, itaque quidem corporis rerum exercitationem sit aliquid porro maxime voluptatum vero tempora
+            consequuntur sapiente voluptatibus laudantium ducimus harum tempore repellendus eligendi suscipit? Eligendi
+            repudiandae voluptas consequatur, molestias repellat accusamus vel, facere dolor blanditiis aliquid alias.
+        </p>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officiis.</p>
+    <h2>Combinators selectors</h2>
+    <div class="combinators-selectors-container">
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dicta.</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, obcaecati laboriosam quisquam nulla
+            consectetur nobis provident omnis earum temporibus similique reiciendis reprehenderit quas porro qui maiores
+            ex perferendis, possimus quidem natus rerum quos! At rem cum, animi eius optio ipsam fuga, maxime quisquam
+            quo vitae velit, alias beatae? Corporis, tempore.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur <span>adipisicing elit.</span> Est dignissimos quidem amet rerum
+            repellat mollitia eveniet corrupti hic tempora inventore, molestiae sapiente labore officia quos ducimus nam
+            fugit soluta pariatur voluptatibus consectetur repudiandae necessitatibus laboriosam provident laudantium.
+            Quasi quo consectetur, voluptatem molestias ex nemo iste quisquam incidunt similique dolor recusandae iure!
+            Dolores corrupti suscipit rerum cumque architecto amet aliquid non omnis autem odio? Rem perferendis, itaque
+            quidem corporis rerum exercitationem sit aliquid porro maxime voluptatum vero tempora consequuntur sapiente
+            voluptatibus laudantium ducimus harum tempore repellendus eligendi suscipit? Eligendi repudiandae voluptas
+            consequatur, molestias repellat accusamus vel, facere dolor blanditiis aliquid alias.</p>
+        <div>
+            <p>Lorem ipsum dolor sit, amet consectetur <span>adipisicing elit.</span> Aliquid aliquam provident
+                aspernatur quidem necessitatibus reiciendis, quia ullam, facere repellendus, vitae iure minus quibusdam
+                nostrum nobis aut dolor possimus cupiditate soluta architecto ex? Nobis quidem deserunt accusamus fuga.
+                Beatae aliquam incidunt reprehenderit a, distinctio temporibus dolores assumenda at? Tempore cupiditate
+                aspernatur ipsum consequatur a fuga soluta ipsam fugit consequuntur dolorum ea harum, quas, eveniet
+                corporis quod placeat esse voluptatum vero repellendus blanditiis distinctio debitis atque nesciunt.
+                Aspernatur deserunt laboriosam alias fuga, facilis quibusdam assumenda perferendis enim, tempora sunt
+                explicabo magnam minima maxime cum dolore ex ut, possimus mollitia obcaecati nam et.</p>
         </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officiis.</p>
-        <h2>Combinators selectors</h2>
-        <div class="combinators-selectors-container">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, dicta.</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus, obcaecati laboriosam quisquam nulla consectetur nobis provident omnis earum temporibus similique reiciendis reprehenderit quas porro qui maiores ex perferendis, possimus quidem natus rerum quos! At rem cum, animi eius optio ipsam fuga, maxime quisquam quo vitae velit, alias beatae? Corporis, tempore.</p>
-            <p>Lorem, ipsum dolor sit amet consectetur <span>adipisicing elit.</span> Est dignissimos quidem amet rerum repellat mollitia eveniet corrupti hic tempora inventore, molestiae sapiente labore officia quos ducimus nam fugit soluta pariatur voluptatibus consectetur repudiandae necessitatibus laboriosam provident laudantium. Quasi quo consectetur, voluptatem molestias ex nemo iste quisquam incidunt similique dolor recusandae iure! Dolores corrupti suscipit rerum cumque architecto amet aliquid non omnis autem odio? Rem perferendis, itaque quidem corporis rerum exercitationem sit aliquid porro maxime voluptatum vero tempora consequuntur sapiente voluptatibus laudantium ducimus harum tempore repellendus eligendi suscipit? Eligendi repudiandae voluptas consequatur, molestias repellat accusamus vel, facere dolor blanditiis aliquid alias.</p>
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus magnam, architecto enim quas laudantium porro
+        labore cupiditate ad nulla culpa esse distinctio soluta ipsa cum est dicta pariatur quis! Hic itaque quas
+        pariatur atque quae temporibus distinctio, nihil similique velit doloremque voluptatum magnam eos corrupti
+        nostrum cupiditate. Eius, corporis amet.</p>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, sapiente!</p>
+    </div>
+    <p>Test</p>
+    <h2>Pseudo classes</h2>
+    <div>
+        <a href="https://www.google.ro" target="_blank">Go to Google</a>
+        <div class="click-button">Click me</div>
+        <button class="click-button">Click me</button>
+    </div>
+    <div class="pseudo-classes">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, nobis!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, nobis!</p>
+        <div>
+            <h2>Test</h2>
             <div>
-                <p>Lorem ipsum dolor sit, amet consectetur <span>adipisicing elit.</span> Aliquid aliquam provident aspernatur quidem necessitatibus reiciendis, quia ullam, facere repellendus, vitae iure minus quibusdam nostrum nobis aut dolor possimus cupiditate soluta architecto ex? Nobis quidem deserunt accusamus fuga. Beatae aliquam incidunt reprehenderit a, distinctio temporibus dolores assumenda at? Tempore cupiditate aspernatur ipsum consequatur a fuga soluta ipsam fugit consequuntur dolorum ea harum, quas, eveniet corporis quod placeat esse voluptatum vero repellendus blanditiis distinctio debitis atque nesciunt. Aspernatur deserunt laboriosam alias fuga, facilis quibusdam assumenda perferendis enim, tempora sunt explicabo magnam minima maxime cum dolore ex ut, possimus mollitia obcaecati nam et.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, debitis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, debitis.</p>
             </div>
         </div>
-    </body>
+    </div>
+    <h2>Pseudo elements</h2>
+    <div>
+        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores aut eum dolorem quos eligendi, amet voluptatibus provident tenetur veniam ea voluptatum? Ad tenetur nam harum? Quam totam similique nulla provident repellat, beatae corporis maxime commodi reiciendis inventore cupiditate magnam tempora sed. Totam possimus delectus expedita consequuntur necessitatibus nulla perferendis ut id dicta qui? Laborum dolorem doloremque ad assumenda neque. Placeat, numquam incidunt voluptatem vel repellendus error quaerat voluptas officia accusantium fugiat aliquam explicabo cupiditate earum nihil amet beatae doloremque voluptate, distinctio et. Iure doloribus, molestiae ducimus repellat, provident iusto libero ipsum omnis architecto veniam quis unde debitis alias adipisci, harum pariatur reprehenderit enim dolores ratione aut praesentium inventore dolor ut! At quibusdam cum consectetur. Eum commodi vitae in quas iste molestiae nisi iure maiores, rem neque adipisci. Earum, nisi! Officiis, accusamus reprehenderit sequi error sapiente culpa voluptas, voluptatem qui, nam animi obcaecati. Placeat dignissimos esse sit veritatis dicta, minus laboriosam illo quaerat neque dolore laudantium vitae non atque sunt numquam quasi inventore. Amet quos, doloribus autem similique eum assumenda neque esse illum adipisci. Totam incidunt a ex vitae eius, necessitatibus nostrum porro quaerat magnam accusamus. Unde totam perferendis dolores quaerat quidem omnis, maxime tempora! Eveniet, quo vero? Officiis veritatis consequuntur eius atque numquam amet omnis odit ut repellendus aspernatur exercitationem, quaerat aperiam dolorem praesentium facere voluptate quibusdam blanditiis nostrum itaque? Ea ex molestiae debitis quaerat consequuntur numquam unde id iste, ullam libero iure! Dicta exercitationem ipsum vitae illum adipisci doloremque ratione, eaque, similique ea modi iure in ex nostrum numquam enim, eius libero dignissimos magni id perspiciatis nihil? Ducimus quaerat, harum odio quia sed veritatis accusantium deleniti cumque repellat iusto in? Ipsa quos expedita velit! Dolore, mollitia ipsam, possimus quis assumenda odit illum, laboriosam facilis adipisci ratione voluptas dignissimos ex labore rem tenetur id corporis obcaecati quidem ut dolores deserunt!</p>
+        <q>Some text</q>, another text <q>text in quote</q>
+    </div>
+</body>
+
 </html>
