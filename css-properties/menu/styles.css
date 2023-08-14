@@ -1,0 +1,20 @@
+:root {
+    --margin-xs: 4px;
+    --margin-md: 8px;
+    --margin-lg: 12px;
+    --margin-xl: 16px;
+    --margin-xxl: 20px;
+
+    --padding-xs: 4px;
+    --padding-md: 8px;
+    --padding-lg: 12px;
+    --padding-xl: 16px;
+    --padding-xxl: 20px;
+
+    --main-bg-color: blue;
+    --secondary-bg-color: red;
+
+    --card-width-desktop: 400px;
+    --card-width-tablet: 320px;
+    --card-width-mobile: 200px;
+}

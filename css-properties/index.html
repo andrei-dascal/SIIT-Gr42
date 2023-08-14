@@ -146,6 +146,44 @@
             background-color: #ff00aa;
             width: 200px;
         }
+
+        .z-index-container {
+            position: relative;
+        }
+
+        .z-index {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: -1;
+            width: 200px;
+        }
+
+        .container-margin {
+            margin: 20px;
+            background-color: #ff00aa;
+            /* margin: 10px 20px;
+            margin: 5px 0px 10px 20px; */
+        }
+
+        .container-padding {
+            /* margin-top: 20px; */
+            padding: 20px;
+            background-color: aqua;
+            /* padding: 10px 20px;
+            padding: 5px 0px 10px 20px; */
+        }
+
+        /* .box-sizing-container {
+
+        } */
+
+        .box-sizing-container .box {
+            box-sizing: border-box;
+            width: 50%;
+            border: 3px solid green;
+            float: left;
+        }
     </style>
 </head>
 
@@ -235,6 +273,25 @@
     <p>Position fixed</p>
     <div class="position-fixed">
         Fixed position
+    </div>
+    <h2>Z-Index</h2>
+    <div class="z-index-container">
+        <img src="../images/animals.png" class="z-index">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus porro voluptas quibusdam sint ex. Soluta ipsam laboriosam accusamus voluptates. Nam perspiciatis quasi modi quibusdam, officia, eligendi repellat voluptates maiores praesentium ea rem tempore facere provident laboriosam labore consectetur necessitatibus laudantium laborum quas temporibus assumenda quo. Quis qui totam labore libero esse quia, ad laboriosam, quo iste voluptatem aperiam. Nisi ut debitis suscipit provident, omnis magnam, perspiciatis iure et unde aliquid, sapiente consequuntur voluptate. Laudantium eaque corporis fuga? Architecto quisquam tempora ipsum facere nesciunt quod iure dolore molestiae illo mollitia repellat voluptate ducimus inventore ea cumque accusantium alias ex, pariatur enim.
+        </p>
+    </div>
+    <h2>Paddings vs Margins</h2>
+    <div class="container-margin">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea nulla quidem minus iste, atque, iusto voluptatibus dolor quasi quod quas libero maiores praesentium cum quis aut ullam nobis, aliquid eligendi aperiam minima soluta. Mollitia, officia sunt repudiandae animi iure accusantium voluptatem deleniti similique facere natus maiores iste tempore labore deserunt tempora quas commodi explicabo, quibusdam eveniet consequuntur magnam doloribus obcaecati nobis. Nostrum vero repellat inventore magni, omnis ullam tenetur quo, deleniti fugiat nulla recusandae reprehenderit sapiente repudiandae ex eum neque! Blanditiis unde nesciunt consectetur itaque, facilis quaerat fugiat totam dolor modi debitis id quo quia eligendi sit consequatur eaque perferendis.</p>
+    </div>
+    <div class="container-padding">
+        <p>Lorem .</p>
+    </div>
+    <h2>Box sizing</h2>
+    <div class="box-sizing-container">
+        <div class="box">Left side</div>
+        <div class="box">Right side</div>
     </div>
 </body>
 
