@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../styles/global.css">
+
+    <style>
+        .header {
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(to right, blue, pink);
+            padding: var(--padding-lg) var(--padding-md);
+        }
+
+        .header .logo {
+            height: 40px;
+        }
+
+        /* .header .menu {
+            display: flex;
+            flex-basis: 100%;
+            justify-content: space-around;
+        } */
+
+        .header .menu-container {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: var(--margin-lg);
+        }
+
+        .header .menu-container a {
+            text-decoration: none;
+            color: white;
+            padding: var(--padding-lg);
+        }
+
+        .header .menu-container a:hover {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="../../images/logo.png" class="logo">
+        <nav class="menu-container">
+            <div class="menu" class="nav-container">
+                <a href="#article">Article</a>
+                <a href="#blog">Blog</a>
+                <a href="#news">News</a>
+            </div>
+            <a href="">Account</a>
+        </nav>
+    </header>
+    <section id="article">
+
+    </section>
+    <section id="blog">
+
+    </section>
+    <section id="news">
+
+    </section>
+</body>
+
+</html>
