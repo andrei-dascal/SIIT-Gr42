@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .card {
+                background-color: blue;
+                padding: 20px;
+            }
+
+            .header {
+                text-align: center;
+                grid-area: header;
+            }
+
+            .aside-info {
+                text-align: center;
+                grid-area: aside-info;
+            }
+
+            .main-info {
+                text-align: center;
+                grid-area: main-info;
+            }
+
+            .right-info {
+                text-align: center;
+                grid-area: right-info;
+            }
+
+            .footer {
+                text-align: center;
+                grid-area: footer;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-areas: 
+                'header header header header header header'
+                'aside-info main-info main-info main-info right-info right-info'
+                'aside-info main-info main-info main-info right-info right-info'
+                'footer footer footer footer footer footer'
+                ;
+                gap: 12px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <div class="card header">
+                <!-- menu -->
+                <!-- banner -->
+                Header
+            </div>
+            <div class="card aside-info">Aside content</div>
+            <div class="card main-info">Main content</div>
+            <div class="card right-info">Right content</div>
+            <div class="card footer">Footer</div>
+        </div>
+    </body>
+</html>
