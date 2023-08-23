@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* to be added in global.css */
+        :root {
+            --mobile-treshold: 768px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-image: linear-gradient(to right, blue, pink);
+            padding: var(--padding-lg) var(--padding-md);
+        }
+
+        .header .logo {
+            height: 40px;
+        }
+
+        .header .menu-container-mobile {
+            display: none;
+        }
+
+        .header .menu-container {
+            display: flex;
+            flex-basis: 100%;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: var(--margin-lg);
+        }
+
+        .header .menu-container a {
+            text-decoration: none;
+            color: white;
+            padding: var(--padding-lg);
+        }
+
+        .header .menu-container a:hover {
+            background-color: blueviolet;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .header {
+                justify-content: space-between;
+            }
+
+            .header .menu-container {
+                display: none;
+            }
+
+            .header .menu-container-mobile {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="../images/logo.png" class="logo">
+        <nav class="menu-container">
+            <div class="menu" class="nav-container">
+                <a href="#article">Article</a>
+                <a href="#blog">Blog</a>
+                <a href="#news">News</a>
+            </div>
+            <a href="">Account</a>
+        </nav>
+        <nav class="menu-container-mobile">
+            <a class="fa fa-bars"></a>
+        </nav>
+    </header>
+    <section id="article">
+
+    </section>
+    <section id="blog">
+
+    </section>
+    <section id="news">
+
+    </section>
+</body>
+
+</html>

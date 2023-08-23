@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            /* Extra small devices (phones, 600px and down) */
+            .title {
+                color: red;
+            }
+
+            /* Small devices */
+            @media only screen and (min-width: 600px) {
+                .title {
+                    color: green;
+                }
+
+                .paragraph {
+                    display: none;
+                }
+            }
+
+
+            /* @media only screen and (min-width: 768px) {
+                .title {
+                    color: blue;
+                }
+
+                .paragraph {
+                    display: block;
+                }
+            } */
+
+            @media only screen and (min-width: 768px) and (max-width: 991px) {
+                .title {
+                    color: blue;
+                }
+
+                .paragraph {
+                    display: block;
+                }
+            }
+
+            @media print {
+                .title {
+                    color: black;
+                    font-size: 60px;
+                }
+
+                .paragraph {
+                    color: brown;
+                    font-size: 36px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="title">CSS Responsiveness</h1>
+        <p class="paragraph">Paragraph</p>
+    </body>
+</html>
