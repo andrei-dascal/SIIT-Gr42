@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="index.js"></script>
+    <script>
+        console.log("---Variables and values (head)---");
+
+        //This is a comment;
+
+        //It's allright. Javascript is "not" that scary;
+        //Escape character: /
+        console.log('It\'s allright. Javascript is "not" that scary;');
+
+        var firstName = "Andrei";
+        //First name is: Andrei;
+        console.log("First name is:" + " " + firstName);
+        console.log(`First name is: ${firstName}`);
+        console.log(typeof firstName);
+
+        var personAge = 33;
+        console.log(typeof personAge);
+
+        var newAge1 = personAge + 1;
+        console.log(newAge1);
+
+        personAge = "33";
+        console.log(typeof personAge);
+
+        var newAge2 = personAge + 1;
+        console.log(newAge2);
+
+        var undefinedVariable;
+        console.log(undefinedVariable);
+
+        var personAge1 = 33;
+        var personAge2 = "33";
+
+        console.log("Are equal? == ", personAge1 == personAge2);
+        console.log("Are equal? === ", personAge1 === personAge2);
+
+        var isEligibileForDrivingLicense = personAge1 >= 18;
+
+        console.log(`Is Andrei eligible for driving license? ${isEligibileForDrivingLicense}`);
+
+        var openParanthesize1 = !(personAge1 > 18 && firstName == "Andrei");
+        var openParanthesize2 = !(personAge1 > 18) || !(firstName == "Andrei");
+        var openParanthesize3 = personAge <= 18 || firstName != "Andrei";
+
+        //Index [0, 1, 2, 3]
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        console.log(fruits.length);
+        console.log(fruits[0]);
+        console.log(fruits[3]);
+        console.log(fruits[fruits.length - 1]);
+
+        console.log(fruits.push("Pear"));
+
+        console.log(fruits);
+        console.log(fruits.toString());
+        console.log(fruits.join(" and "));
+
+        console.log(fruits.pop());
+        console.log(fruits);
+
+        var newFruits = fruits;
+        console.log(`Fruits: ${fruits}`);
+        console.log(`New Fruits: ${newFruits}`);
+
+        newFruits.push("Pineapple");
+        console.log(`Fruits: ${fruits}`);
+        console.log(`New Fruits: ${newFruits}`);
+
+        var person1 = {
+            firstName: "Andrei",
+            lastName: "Dascal",
+            age: 33,
+            cnp: "123456789"
+        }
+
+        console.log(person1.firstName);
+        console.log(person1.lastName);
+        console.log(person1.firstName + " " + person1.lastName);
+
+        //Control structures
+        console.log("---Control structures---");
+
+        var isAdult = person1.age >= 18;
+
+        //If statement and else statement are mutually exclusive;
+        if (isAdult) {
+            console.log("You are an adult");
+            //different code statements
+        } else {
+            console.log("You are not an adult");
+        }
+
+        var adultText = isAdult ? "You are an adult" : "You are not an adult";
+        console.log(`Using ternary operator: ${adultText}`);
+
+        var domainQuiz = "Math";
+
+        if (domainQuiz === "History") {
+            console.log("History");
+        } else if (domainQuiz === "Geography") {
+            console.log("Geography");
+        } else if (domainQuiz === "Math") {
+            console.log("Math");
+        } else {
+            // throw new Error("Not known domain");
+            console.log("");
+        }
+
+        switch (domainQuiz) {
+            case "History":
+                console.log("History");
+                break;
+            case "Geography":
+                console.log("Geography");
+                break;
+            case "Math":
+                console.log("Math");
+                break;
+            default:
+                console.log("On default case");
+                break;
+        }
+
+        var whileIndex = 0;
+
+        while(whileIndex < 10) {
+            console.log(whileIndex);
+
+            whileIndex += 1;
+            // whileIndex = whileIndex + 1;
+        }
+
+        var whileBoolean = true;
+        var whileIndex = 0;
+
+        while(whileBoolean) {
+            console.log(whileIndex);
+
+            if(whileIndex === 7)
+                whileBoolean = false;
+
+            whileIndex++;
+            // whileIndex = whileIndex + 1;
+        }
+
+        console.log("-------------");
+        console.log(whileIndex);
+        console.log(whileBoolean);
+
+        do {
+            console.log(whileIndex);
+
+            if(whileIndex === 7)
+                whileBoolean = false;
+
+            whileIndex++;
+            // whileIndex = whileIndex + 1;
+        } while (whileBoolean)
+
+        console.log("-------------");
+        console.log(whileIndex);
+        console.log(whileBoolean);
+
+        for(var forIndex = 0; forIndex < 5; forIndex += 2) {
+            console.log(forIndex);
+        }
+
+        console.log("End of script");
+    </script>
+</head>
+
+<body>
+    <script>
+        console.log("---Variables and values (body)---");
+    </script>
+</body>
+
+</html>
