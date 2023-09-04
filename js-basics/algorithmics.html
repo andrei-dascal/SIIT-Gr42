@@ -1,26 +1,253 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script>
-            var numberArray = [5, 15, 1, 3, 4, 75, 25, 6, 7, 11, 6, 2, 15, -1, 90, -100, 76, 76];
 
-            //Problem1: Log the first n elements from an aray;
+<head>
+    <script>
+        var numberArray = [5, 15, 1, 3, 4, 75, 25, 6, 7, 11, 6, 2, 15, -1, 90, -100, 76, 76];
 
-            var n = 100000;
+        //Problem1: Log the first n elements from an aray;
 
-            var itemsLength = n > numberArray.length ? numberArray.length : n;
+        // var n = 100000;
 
-            // if(n > numberArray.length)
-            //     itemsLength = numberArray.length;
-            // else
-            //     itemsLength = n;
+        //Using ternary operator
+        // var itemsLength = n > numberArray.length ? numberArray.length : n;
 
-            for(var index = 0; index < itemsLength; index++) {
-                console.log(numberArray[index]);
-            }
-        </script>
-    </head>
-    <body>
+        // if(n > numberArray.length)
+        //     itemsLength = numberArray.length;
+        // else
+        //     itemsLength = n;
 
-    </body>
+        // for(var index = 0; index < itemsLength; index++) {
+        //     console.log(numberArray[index]);
+        // }
+
+        //Problem2: Console.log the even numbers from array
+
+        //Parcurgem array-ul
+        //La fiecare pas verificam daca numarul este par
+        //Daca da, il afisam
+
+        // var evenNumberArray = [];
+
+        // for(var index = 0; index < numberArray.length; index++) {
+        //     var numberFromArray = numberArray[index];
+
+        //     if(numberFromArray % 2 === 0) {
+        //         // console.log(`Problem2 - Even numbers: ${numberFromArray}`);
+        //         evenNumberArray.push(numberFromArray);
+        //     }
+        // }
+
+        // console.log(`Problem2 - Even numbers: ${evenNumberArray}`);
+
+        // for (var index = 0; index < numberArray.length; index++) {
+        //     var numberFromArray = numberArray[index];
+
+        //     if (numberFromArray % 2 === 0)
+        //         // break;
+        //         continue;
+
+        //     console.log(`Problem2 - Odd numbers: ${numberFromArray}`);
+        // }
+
+        //Problem3: Log n last items;
+
+        // var n = 4;
+
+        // for(var index = numberArray.length - n; index < numberArray.length; index++) {
+        //     console.log(numberArray[index]);
+        // }
+
+        //Problem4: Log items in reverse order
+        // for(var index = numberArray.length - 1; index >= 0; index--) {
+        //     console.log(numberArray[index]);
+        // }
+
+        //Problem5: Log the sum of the elements
+
+        //Declaram o variabila
+        //Parcurgem array-ul
+        //Dupa fiecare parcurgere sa asignam variabilei valoarea indexului
+        //Logheaza variabila
+
+        // var sum = 0;
+
+        // for(var index = 0; index < numberArray.length; index++) {
+        //     // sum = sum + numberArray[index];
+        //     sum += numberArray[index];
+        // }
+
+        // console.log(`Sum is: ${sum}`);
+
+        //Problem6 Find min/max in array
+
+        //Definim si initializam 2 variabile min si max cu numberArray[0]
+        //Parcurgem array-ul
+        //Daca numberArray[index] < min; min = numberArray[index];
+        //Daca numberArray[index] > max => max = numberArray[index]
+
+        // var minNumber = numberArray[0];
+        // var maxNumber = numberArray[0];
+
+        // for (var index = 1; index < numberArray.length; index++) {
+        //     var numberFromArray = numberArray[index];
+
+        //     if (numberFromArray < minNumber)
+        //         minNumber = numberFromArray;
+
+        //     // else if (numberFromArray > maxNumber)
+        //     //     maxNumber = numberFromArray;
+        //     // if(minNumber > numberArray[index])
+        //     //     minNumber = numberArray[index];
+
+        //     if (numberFromArray > maxNumber)
+        //         maxNumber = numberFromArray;
+        // }
+
+        // console.log(`Min number: ${minNumber}`);
+        // console.log(`Max number: ${maxNumber}`);
+
+        //Problem7: FizzBuzz game: 
+        //if divide by 3 => fizz; if divide by 5 => buzz, if divide by 15 => fizzbuzz; else log the number
+
+        //Wrong - example of algorithm
+        //Parcurgem array-ul
+        //Verific daca se divide cu 3 si loghez fizz
+        //Verific daca se divide cu 5 si loghez buzz
+        //Verific daca se divide cu 15 si loghez fizzbuzz
+        //Daca nu se divide nici cu 3, nici cu 5 si nici cu 15 loghez numarul din array
+
+        // for (var index = 0; index < numberArray.length; index++) {
+        //     var numberFromArray = numberArray[index];
+
+        //     if (numberFromArray % 3 === 0)
+        //         console.log("fizz");
+
+        //     if (numberFromArray % 5 === 0)
+        //         console.log("buzz");
+
+        //     if (numberFromArray % 15 === 0)
+        //         console.log("fizzbuzz");
+
+        //     if(numberFromArray % 3 !== 0 && numberFromArray % 5 !== 0 && numberFromArray % 15 !== 0)
+        //         console.log(numberFromArray)
+        // }
+
+        //Parcurgem array-ul
+        //Verific daca se divide cu 3 si Verific daca se divide cu 5 si Verific daca se divide cu 15 => fizbuzz
+        //Else Verific daca se divide cu 5 si loghez buzz
+        //Else Verific daca se divide cu 3 si loghez fizz
+        //Else loghez numarul din array
+
+        // for (var index = 0; index < numberArray.length; index++) {
+        //     var numberFromArray = numberArray[index];
+
+        //     if (numberFromArray % 15 === 0)
+        //         console.log("fizzbuzz");
+        //     else if (numberFromArray % 5 === 0)
+        //         console.log("buzz");
+        //     else if (numberFromArray % 3 === 0)
+        //         console.log("fizz");
+        //     else
+        //         console.log(numberFromArray)
+        // }
+
+        // for (var index = 0; index < numberArray.length; index++) {
+        //     var numberFromArray = numberArray[index];
+
+        //     if (numberFromArray % 15 === 0) {
+        //         console.log("fizzbuzz");
+        //         continue;
+        //     }
+
+        //     if (numberFromArray % 5 === 0) {
+        //         console.log("buzz");
+        //         continue;
+        //     }
+
+        //     if (numberFromArray % 3 === 0) {
+        //         console.log("fizz");
+        //         continue;
+        //     }
+
+        //     console.log(numberFromArray)
+        // }
+
+        //Problem8: Generate random numbers
+
+        // console.log(Math.random()); //Random between 0 inclusive and 1 exclusive;
+
+        // var randomNumberFloat = Math.random() * 100;
+
+        // console.log(randomNumberFloat);
+        // console.log(Math.floor(randomNumberFloat));
+
+        //Problem9: From a list of persons(person is defined by name, age, location)
+        //=> only those over 18 and from a specific location can vote
+
+        var person1 = {
+            name: "Andrei",
+            age: 33,
+            location: "Cluj-Napoca"
+        }
+
+        var person2 = {
+            name: "Maria",
+            age: 19,
+            location: "Cluj-Napoca"
+        }
+
+        var person3 = {
+            name: "Sorin",
+            age: 15,
+            location: "Cluj-Napoca"
+        }
+
+        var person4 = {
+            name: "Andreea",
+            age: 20,
+            location: "Arad"
+        }
+
+        var person5 = {
+            name: "Liviu",
+            age: 12,
+            location: "Timisoara"
+        }
+
+        var personList = [person1, person2, person3, person4, person5];
+
+        // var city = "Cluj-Napoca";
+        // var eligibleAge = 18;
+
+        // for (var index = 0; index < personList.length; index++) {
+        //     var person = personList[index];
+
+        //     if (person.age >= eligibleAge && person.location === city) {
+        //         console.log(`${person.name} from ${person.location} can vote!`);
+        //         continue;
+        //     }
+
+        //     var cannotVoteMsg = `${person.name} cannot vote.`;
+
+        //     if (person.location !== city)
+        //         cannotVoteMsg = `${cannotVoteMsg} You are not from ${city}, you are located in  ${person.location}`;
+
+        //     if (person.age < eligibleAge)
+        //         cannotVoteMsg = `${cannotVoteMsg} You are not over ${eligibleAge}!`;
+
+        //     console.log(cannotVoteMsg);
+        // }
+
+        for (var person of personList) {
+            console.log(person.name);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
 </html>
