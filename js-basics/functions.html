@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var numberArray1 = [5, 15, 1, 3, 4, 75, 25, 6, 7, 11, 6, 2, 15, -1, 90, -100, 76, 76];
+        var numberArray2 = [1, 3, 6, 12, 18, -9, -10, -11];
+
+        // var evenNumberArray1 = [];
+
+        // for (var index = 0; index < numberArray1.length; index++) {
+        //     var numberFromArray = numberArray1[index];
+
+        //     if (numberFromArray % 2 === 0) {
+        //         evenNumberArray1.push(numberFromArray);
+        //     }
+        // }
+
+        // console.log(`Problem2 - Even numbers for array1: ${evenNumberArray1}`);
+
+        // var evenNumberArray2 = [];
+
+        // for (var index = 0; index < numberArray2.length; index++) {
+        //     var numberFromArray = numberArray2[index];
+
+        //     if (numberFromArray % 2 === 0) {
+        //         evenNumberArray2.push(numberFromArray);
+        //     }
+        // }
+
+        // console.log(`Problem2 - Even numbers for array2: ${evenNumberArray2}`);
+
+        function logEvenNumbers(inputArray, message) {
+            var evenNumberArray = getEvenNumbers(inputArray);
+
+            console.log(`${message} ${evenNumberArray}`);
+        }
+
+        logEvenNumbers(numberArray1, 'Problem2 - Even numbers for array:');
+        logEvenNumbers(numberArray2, '');
+        logEvenNumbers([1, 2, 3, 4, 5, 6, 7], 'Even numbers for array:');
+
+        function saveEvenNumbers(inputArray) {
+            var evenNumberArray = getEvenNumbers(inputArray);
+
+            saveInJsonFile(evenNumberArray);
+        }
+
+        function getEvenNumbers(inputArray) {
+            var evenNumberArray = [];
+
+            for (var index = 0; index < inputArray.length; index++) {
+                var numberFromArray = inputArray[index];
+
+                if (numberFromArray % 2 === 0) {
+                    evenNumberArray.push(numberFromArray);
+                }
+            }
+
+            return evenNumberArray;
+        }
+
+        function saveInJsonFile(inputArray) {
+            //Will save somewhere, in a json file
+        }
+
+        // n! = 1 * 2 * 3 * ... * n
+        // 3! = 1 * 2 * 3 = 6
+        // 1! = 1;
+        // 0! = 1;
+        function factorial(number) {
+            // if(number < 0)
+            //     return;
+
+            if(number === 0 || number === 1){
+                return 1;
+            }
+
+            return number * factorial(number - 1);
+        }
+
+        // console.log(`Factorial de 3 este: ${factorial(3)}`);
+        // console.log(`Factorial de 5 este: ${factorial(5)}`);
+        // console.log(`Factorial de 10 este: ${factorial(10)}`);
+        // console.log(factorial(-1));
+        // console.log(factorial(0));
+
+        //Self invoked funtion without parameters
+        (function() {
+            console.log("Loading data");
+        })();
+
+        //Self invoked funtion with parameters
+        (function(name) {
+            console.log(`${name} - Loading data`);
+        })("Andrei");
+
+        // var sum = function(number1, number2) {
+        //     return number1 + number2;
+        // }
+
+        // console.log(sum(1, 3));
+
+        // function sum(number1, number2) {
+        //     return number1 + number2;
+        // }
+
+        function sum(...numbers) {
+            var sum = 0;
+            
+            numbers.forEach(number => {
+                sum += number;
+            });
+
+            return sum;
+        }
+
+        console.log(`Suma dintre 3 si 5 este: ${sum(3, 5)}`);
+        //Suma 2, 3, 4
+        console.log(`Suma dintre 2, 3 si 4 este: ${sum(sum(2, 3), 4)}`);
+        console.log(`Suma dintre 2, 3 si 4 este: ${sum(2, 3, 4)}`);
+        console.log(`Suma dintre 2, 3 si 4 este: ${sum(2, 3, 4, 5, 100)}`);
+
+        // var array1 = [3, 4];
+        // var array2 = [1, 2, ...array1, 5, 6];
+
+        // console.log(array2);
+
+        // array2 = [array2[0], array2[1], array1[0], array1[1], array2[2], array2[3]]
+
+        var array1 = [1, 2, [4, 5, 6]];
+        var array2 = [...array1];
+
+        var array3 = [...array1, ...array2];
+
+        array2.push(4);
+        array2[2].push(7);
+
+        console.log(array1);
+        console.log(array2);
+        console.log(array3);
+
+        var person1 = {
+            firstName: "Andrei",
+            lastName: "Dascal",
+            age: 32,
+            car: {
+                type: "BMW",
+                year: "2014"
+            }
+        }
+
+        var person2 = { ...person1 };
+
+        person2.age = 33;
+        person2.car.year = "2015";
+
+        console.log(person1);
+        console.log(person2);
+
+        //Hoisting
+
+        console.log(notDeclaredVariable);
+
+        //At some point in script we declare and initialize the variable
+
+        var notDeclaredVariable = "Something";
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

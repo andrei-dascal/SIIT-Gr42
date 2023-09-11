@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        //Enum, Enums, Enumerations
+        var Gender = {
+            Male: "Male",
+            Female: "Female"
+        }
+
+        var customer1 = {
+            name: "Andrei Baciu",
+            gender: Gender.Male,
+            height: 1.7,
+            weight: 75
+        }
+
+        var customer2 = {
+            name: "Demian Ioan",
+            gender: Gender.Male,
+            height: 1.8,
+            weight: 130
+        }
+
+        var customer3 = {
+            name: "Valeria Morosan",
+            gender: Gender.Female,
+            height: 1.5,
+            weight: 60
+        }
+
+        var customer4 = {
+            name: "Maia Florescu",
+            gender: Gender.Female,
+            height: 1.75,
+            weight: 70
+        }
+
+        var customerList = [customer1, customer2, customer3, customer4];
+
+        for (var customer of customerList) {
+            var bmiScore = Math.floor(customer.weight / (customer.height * customer.height));
+
+            // if (bmiScore < 18.5) {
+            //     console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Underweight");
+            // } else if (bmiScore < 25) {
+            //     console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Normal");
+            // } else if (bmiScore < 30) {
+            //     console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Overweight");
+            // } else {
+            //     console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Obese");
+            // }
+
+            if (bmiScore < 18.5) {
+                console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Underweight");
+                continue;
+            }
+
+            if (bmiScore < 25) {
+                console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Normal");
+                continue;
+            }
+
+            if (bmiScore < 30) {
+                console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Overweight");
+                continue;
+            }
+
+            console.log(customer.name + " | " + customer.gender + " | " + bmiScore + " | " + "Obese");
+        }
+    </script>
+</head>
+
+<body></body>
+
+</html>
