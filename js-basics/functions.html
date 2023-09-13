@@ -72,7 +72,7 @@
             // if(number < 0)
             //     return;
 
-            if(number === 0 || number === 1){
+            if (number === 0 || number === 1) {
                 return 1;
             }
 
@@ -86,12 +86,12 @@
         // console.log(factorial(0));
 
         //Self invoked funtion without parameters
-        (function() {
+        (function () {
             console.log("Loading data");
         })();
 
         //Self invoked funtion with parameters
-        (function(name) {
+        (function (name) {
             console.log(`${name} - Loading data`);
         })("Andrei");
 
@@ -107,7 +107,7 @@
 
         function sum(...numbers) {
             var sum = 0;
-            
+
             numbers.forEach(number => {
                 sum += number;
             });
@@ -140,23 +140,23 @@
         console.log(array2);
         console.log(array3);
 
-        var person1 = {
-            firstName: "Andrei",
-            lastName: "Dascal",
-            age: 32,
-            car: {
-                type: "BMW",
-                year: "2014"
-            }
-        }
+        // var person1 = {
+        //     firstName: "Andrei",
+        //     lastName: "Dascal",
+        //     age: 32,
+        //     car: {
+        //         type: "BMW",
+        //         year: "2014"
+        //     }
+        // }
 
-        var person2 = { ...person1 };
+        // var person2 = { ...person1 };
 
-        person2.age = 33;
-        person2.car.year = "2015";
+        // person2.age = 33;
+        // person2.car.year = "2015";
 
-        console.log(person1);
-        console.log(person2);
+        // console.log(person1);
+        // console.log(person2);
 
         //Hoisting
 
@@ -165,6 +165,119 @@
         //At some point in script we declare and initialize the variable
 
         var notDeclaredVariable = "Something";
+
+        //Let vs Var vs Const
+
+        // logVariableMessages(variableDeclaredWithVar, variableDeclaredWithLet, variableDeclaredWithConst);
+
+        var variableDeclaredWithVar = "VariableDeclaredWithVar";
+        let variableDeclaredWithLet = "VariableDeclaredWithLet";
+        const variableDeclaredWithConst = "VariableDeclaredWithConst";
+
+        // variableDeclaredWithConst = "NewValue";
+
+        logVariableMessages(variableDeclaredWithVar, variableDeclaredWithLet, variableDeclaredWithConst);
+
+        if (true) {
+            // variableDeclaredWithLet = "New Value";
+            var variableDeclaredWithVar = "VariableDeclaredWithVar - 1";
+            let variableDeclaredWithLet = "VariableDeclaredWithLet - 1";
+            const variableDeclaredWithConst = "VariableDeclaredWithConst - 1";
+
+            if (true) {
+                var variableDeclaredWithVar = "VariableDeclaredWithVar - 2";
+                let variableDeclaredWithLet = "VariableDeclaredWithLet - 2";
+                const variableDeclaredWithConst = "VariableDeclaredWithConst - 2";
+
+                logVariableMessages(variableDeclaredWithVar, variableDeclaredWithLet, variableDeclaredWithConst);
+            }
+
+            logVariableMessages(variableDeclaredWithVar, variableDeclaredWithLet, variableDeclaredWithConst);
+        }
+
+        logVariableMessages(variableDeclaredWithVar, variableDeclaredWithLet, variableDeclaredWithConst);
+
+        function logVariableMessages(variableVar, variableLet, variableConst) {
+            console.log(variableVar);
+            console.log(variableLet);
+            console.log(variableConst);
+            console.log("------");
+        }
+
+        //Closures
+        function greetPerson(name) {
+            function greet(greeting) {
+                console.log(greeting + " " + name);
+            }
+
+            return greet;
+        }
+
+        let greetAna = greetPerson("Ana");
+        greetAna("Hello");
+        greetAna("Bye");
+
+        let greetBen = greetPerson("Ben");
+        greetBen("Hello");
+        greetBen("Bye");
+
+        //Array most used functions
+
+        const person1 = {
+            name: "Andrei",
+            age: 33,
+            location: "Cluj-Napoca"
+        }
+
+        const person2 = {
+            name: "Maria",
+            age: 19,
+            location: "Cluj-Napoca"
+        }
+
+        const person3 = {
+            name: "Sorin",
+            age: 15,
+            location: "Cluj-Napoca"
+        }
+
+        const person4 = {
+            name: "Andreea",
+            age: 20,
+            location: "Arad"
+        }
+
+        const person5 = {
+            name: "Liviu",
+            age: 12,
+            location: "Timisoara"
+        }
+
+        const personList = [person1, person2, person3, person4, person5];
+
+        const personListFiltered = personList.filter(person => person.age > 18);
+
+        console.log(personListFiltered);
+
+        const personListMap = personList.map(person => person.age = person.age + 1);
+
+        console.log(personListMap);
+        console.log(person5.age);
+
+        const isThereAnyAdults = personList.some(x => x.age > 18);
+
+        if (isThereAnyAdults)
+            console.log("isThereAnyAdults");
+
+        const numberArray = [40, 1, 5, 200];
+
+        numberArray.sort();
+
+        console.log(numberArray);
+
+        numberArray.sort((a, b) => { return a - b });
+
+        console.log(numberArray);
     </script>
 </head>
 
