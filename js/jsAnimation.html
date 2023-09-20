@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                width: 400px;
+                height: 400px;
+                background-color: aqua;
+                margin-top: 8px;
+            }
+
+            .element {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="animateContainer()">Start animation</button>
+        <div class="container">
+            <div id="element" class="element"></div>
+        </div>
+
+        <script>
+            // document.getElementById("").addEventListener("click", function() {
+
+            // });
+
+            function animateContainer() {
+                const elementSquare = document.getElementById("element");
+
+                let position = 0;
+
+                const intervalID = setInterval(move, 5);
+
+                function move() {
+                    if(position === 350) {
+                        clearInterval(intervalID);
+                    }
+
+                    position += 1;
+
+                    elementSquare.style.top = position + "px";
+                    elementSquare.style.left = position + "px";
+                }
+
+            } 
+        </script>
+    </body>
+</html>
