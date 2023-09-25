@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <script>
+        const Gender = {
+            Male: "Male",
+            Female: "Female"
+        }
+
+        const customer1 = {
+            name: "Andrei Baciu",
+            gender: Gender.Male,
+            height: 1.7,
+            weight: 75
+        }
+
+        const customer2 = {
+            name: "Demian Ioan",
+            gender: Gender.Male,
+            height: 1.8,
+            weight: 130
+        }
+
+        const customer3 = {
+            name: "Valeria Morosan",
+            gender: Gender.Female,
+            height: 1.5,
+            weight: 60
+        }
+
+        const customer4 = {
+            name: "Maia Florescu",
+            gender: Gender.Female,
+            height: 1.75,
+            weight: 70
+        }
+
+        const customer5 = {
+            name: "Andreea Pop",
+            gender: Gender.Female,
+            height: 1.75,
+            weight: 55
+        }
+
+        const customerList = [customer1, customer2, customer3, customer4, customer5];
+
+        for (const customer of customerList) {
+            const bmiScore = calculateBMIScore(customer);
+
+            if (bmiScore < 18.5) {
+                displayBMIInfo(customer, bmiScore, "Underweight", "blue");
+            } else if (bmiScore < 25) {
+                displayBMIInfo(customer, bmiScore, "Normal", "green");
+            } else if (bmiScore < 30) {
+                displayBMIInfo(customer, bmiScore, "Overweight", "orange");
+            } else {
+                displayBMIInfo(customer, bmiScore, "Obese", "red");
+            }
+        }
+
+        function calculateBMIScore(customer) {
+            return Math.floor(customer.weight / (customer.height * customer.height));
+        }
+
+        function displayBMIInfo(customer, bmiScore, status, bmiColor) {
+            const paragraph = document.createElement("p");
+            const text = document.createTextNode(`${customer.name} | ${customer.gender} | ${bmiScore} | `);
+            paragraph.appendChild(text);
+
+            const bmiStatus = document.createElement("span");
+            const bmiStatusText = document.createTextNode(status);
+            bmiStatus.style.color = bmiColor;
+            bmiStatus.appendChild(bmiStatusText);
+            paragraph.appendChild(bmiStatus);
+
+            document.body.appendChild(paragraph);
+        }
+    </script>
+</body>
+
+</html>
