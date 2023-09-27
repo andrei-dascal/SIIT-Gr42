@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            const user = {
+                name: "Andrei Dascal",
+                username: "andrei.dascal",
+                password: "password.123",
+                //allways encrypt password
+
+                login: function(username, password) {
+                    if(username === this.username && password === this.password)
+                        console.log("Login successfully");
+                    else
+                        console.log("Login failed"); 
+                }
+            }
+
+            user.login("andrei.dascal", "password.123");
+            user.login("andrei.dascal", "password.1234");
+            user.login("andrei.dascal.S", "password.1234");
+
+            class Address {
+                #country;
+                #city;
+                #addressLine1;
+                #addressLine2;
+
+                constructor(country, city, addressLine1) {
+                    this.#country = country;
+                    this.#city = city;
+                    this.#addressLine1 = addressLine1;
+                }
+
+                get country() {
+                    return this.#country;
+                }
+
+                set addressLine2(addressLine2) {
+                    this.#addressLine2 = addressLine2;
+                }
+
+                get addressLine2() {
+                    return this.#addressLine2;
+                }
+            }
+
+            class Person {
+                #name;
+                #uniqueIdentifier;
+                #address;
+
+                constructor(name, uniqueIdentifier, address) {
+                    this.#name = name;
+                    this.#uniqueIdentifier = uniqueIdentifier;
+                    this.#address = address;
+                }
+
+                get name() {
+                    return this.#name;
+                }
+
+                get uniqueIdentifier() {
+                    return this.#uniqueIdentifier;
+                }
+
+                get address() {
+                    return this.#address;
+                }
+            }
+
+            // const person1Address = new Address("Romania", "Cluj-Napoca", "Str. ...");
+
+            // console.log(person1Address.addressLine2);
+            // person1Address.addressLine2 = "address line 2";
+            // console.log(person1Address.addressLine2);
+
+            // const person1 = new Person("Andrei Dascal", "123456789", person1Address);
+
+            // console.log(person1.name);
+            // console.log(person1.uniqueIdentifier);
+            // console.log(person1.address);
+            // console.log(person1.address.country);
+
+            class User extends Person {
+                #username;
+                #password;
+
+                constructor(username, password, name, uniqueIdentifier, address) {
+                    super(name, uniqueIdentifier, address);
+                    this.#username = username;
+                    this.#password = password;
+                }
+
+                get username() {
+                    return this.#username;
+                }
+
+                login(username, password) {
+                    if(this.#validateUser(username, password))
+                        console.log("Login successfully");
+                    else
+                        console.log("Login failed"); 
+                }
+
+                //Either a settter on password or a function;
+                updatePassword(username, oldPassword, newPassword) {
+                    const isUserValid = this.#validateUser(username, oldPassword);
+
+                    if(!isUserValid)
+                        return;
+
+                    const isPasswordValid = this.#validatePassword(newPassword);
+
+                    if(!isPasswordValid)
+                        return;
+
+                    this.#password = newPassword;
+                    console.log("Password changed");
+                }
+
+                #validateUser(username, password) {
+                    const isValid = username === this.#username && password === this.#password;
+
+                    if(!isValid)
+                        console.log("Invalid user!");
+
+                    return isValid;
+                }
+
+                #validatePassword(password) {
+                    if(password.length < 6) {
+                        console.log("Minimum characters length: 6");
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
+
+            const user1 = new User("andrei.dascal", "password.123", "Andrei Dascal", "123445567", new Address("Romania", "Cluj-Napoca", "Str. ..."));
+            console.log(user1.username);
+            console.log(user1.name);
+            console.log(user1.address.country);
+
+            user1.login("andrei.dascal", "password.123");
+            user1.login("andrei.dascal", "password.1234");
+
+            user1.updatePassword("andrei.dascal", "password.1234", "password.12345");
+            user1.updatePassword("andrei.dascal1", "password.123", "password.12345");
+            user1.updatePassword("andrei.dascal", "password.123", "12345");
+            user1.updatePassword("andrei.dascal", "password.123", "password.12345");
+            user1.updatePassword("andrei.dascal", "password.123", "password.123456789");
+        </script>
+    </body>
+</html>
