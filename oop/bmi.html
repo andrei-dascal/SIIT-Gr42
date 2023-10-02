@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        const Gender = {
+            Male: "Male",
+            Female: "Female"
+        }
+
+        class Customer {
+            #name;
+            #height;
+            #weight;
+
+            #bmiResult;
+
+            constructor(name, height, weight) {
+                this.#name = name;
+                this.#height = height;
+                this.#weight = weight;
+            }
+
+            calculateBMI() {
+                this.#bmiResult = Math.floor(this.#weight / (this.#height * this.#height));
+                return this.#bmiResult;
+            }
+
+            logDetails() {
+                const bmiScore = this.calculateBMI();
+
+                if (bmiScore < 18.5) {
+                    console.log(this.#name + " | " + bmiScore + " | " + "Underweight");
+                    return;
+                }
+
+                if (bmiScore < 25) {
+                    console.log(this.#name + " | " + bmiScore + " | " + "Normal");
+                    return;
+                }
+
+                if (bmiScore < 30) {
+                    console.log(this.#name + " | " + bmiScore + " | " + "Overweight");
+                    return;
+                }
+
+                console.log(this.#name + " | " + bmiScore + " | " + "Obese");
+            }
+
+            set weight(weight) {
+                this.#weight = weight;
+            }
+        }
+
+        // const customer1 = new Customer();
+        // customer1.name = "Andrei Baciu";
+        // customer1.gender = Gender.Male;
+        // customer1.height = 1.7;
+        // customer1.weight = 75;
+
+        const andreiBaciu = new Customer("Andrei Baciu", 1.7, 75);
+        console.log(andreiBaciu.calculateBMI());
+
+        andreiBaciu.weight = 70;
+        console.log(andreiBaciu.calculateBMI());
+        console.log(andreiBaciu.logDetails());
+    </script>
+</body>
+
+</html>

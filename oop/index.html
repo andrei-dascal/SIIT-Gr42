@@ -22,6 +22,7 @@
             user.login("andrei.dascal.S", "password.1234");
 
             class Address {
+                static description = "Here you can find all RO addresses";
                 #country;
                 #city;
                 #addressLine1;
@@ -70,8 +71,9 @@
                 }
             }
 
-            // const person1Address = new Address("Romania", "Cluj-Napoca", "Str. ...");
-
+            const person1Address = new Address("Romania", "Cluj-Napoca", "Str. ...");
+            console.log(person1Address.country);
+            console.log(Address.description);
             // console.log(person1Address.addressLine2);
             // person1Address.addressLine2 = "address line 2";
             // console.log(person1Address.addressLine2);
@@ -152,6 +154,27 @@
             user1.updatePassword("andrei.dascal", "password.123", "12345");
             user1.updatePassword("andrei.dascal", "password.123", "password.12345");
             user1.updatePassword("andrei.dascal", "password.123", "password.123456789");
+
+            class Admin extends User {
+                constructor(username, password, name, uniqueIdentifier, address) {
+                    super(username, password, name, uniqueIdentifier, address);
+                }
+
+                login(username, password) {
+                    console.log("Admin login");
+                    super.login(username, password);
+                }
+
+                removeUser(username) {
+                    console.log("User removed");
+                }
+            }
+
+            const admin1 = new Admin("admin", "admin.123", "Andrei Dascal", "123445567", new Address("Romania", "Cluj-Napoca", "Str. ..."));
+            
+            console.log("Admin Details");
+            admin1.login("admin", "admin.123");
+            console.log(admin1.name);
         </script>
     </body>
 </html>
