@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "21ea1aba-8564-4289-8263-c7ef9aa1c2e2",
+		"name": "SIIT - Gr42",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20884"
+	},
+	"item": [
+		{
+			"name": "Get - CatFacts",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "test",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "test",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://catfact.ninja/fact",
+					"protocol": "https",
+					"host": [
+						"catfact",
+						"ninja"
+					],
+					"path": [
+						"fact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Jokes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://official-joke-api.appspot.com/random_joke",
+					"protocol": "https",
+					"host": [
+						"official-joke-api",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"random_joke"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Agify",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.agify.io?name=stefan",
+					"protocol": "https",
+					"host": [
+						"api",
+						"agify",
+						"io"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "test",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "stefan"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"id\": 102,\r\n    \"title\": \"New post\",\r\n    \"body\": \"New body\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Posts",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 1,\r\n    \"id\": 3,\r\n    \"title\": \"Updated post\",\r\n    \"body\": \"Updated body\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/3",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Del - Posts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/2",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Trivia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://the-trivia-api.com/v2/questions",
+					"protocol": "https",
+					"host": [
+						"the-trivia-api",
+						"com"
+					],
+					"path": [
+						"v2",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - OpenTrivia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://opentdb.com/api.php?amount=10",
+					"protocol": "https",
+					"host": [
+						"opentdb",
+						"com"
+					],
+					"path": [
+						"api.php"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "10"
+						},
+						{
+							"key": "category",
+							"value": "Entertainment: Books",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Localhost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/posts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
