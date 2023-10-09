@@ -1,144 +1,156 @@
 {
-    "questions": [
-        {
-            "category": "science",
-            "id": "622a1c377cc59eab6f950473",
-            "correctAnswer": "poisons",
-            "incorrectAnswers": [
-                "life",
-                "vibrations and oscillations in the Sun",
-                "the historical study of languages"
-            ],
-            "question": {
-                "text": "What is Toxicology the study of?"
-            },
-            "difficulty": "medium"
-        },
-        {
-            "category": "science",
-            "id": "622a1c377cc59eab6f950463",
-            "correctAnswer": "the study and analysis of animal remains at archaeological sites",
-            "incorrectAnswers": [
-                "men",
-                "rays, usually ionising radiation",
-                "prehistoric life"
-            ],
-            "question": {
-                "text": "What is Zooarchaeology the study of?"
-            },
-            "difficulty": "medium"
-        },
-        {
-            "category": "science",
-            "id": "622a1c3a7cc59eab6f950fed",
-            "correctAnswer": "Hippopotamus",
-            "incorrectAnswers": [
-                "Elephant",
-                "Rhinoceros",
-                "American Bison"
-            ],
-            "question": {
-                "text": "Which Is The Second Heaviest Land Animal?"
-            },
-            "difficulty": "hard"
-        },
-        {
-            "category": "science",
-            "id": "63e13a25106de6ffa7d4a7a1",
-            "correctAnswer": "Dodecagon",
-            "incorrectAnswers": [
-                "Octagon",
-                "Hexagon",
-                "Triangle"
-            ],
-            "question": {
-                "text": "What is the name of a shape with twelve sides?"
-            },
-            "difficulty": "medium"
-        },
-        {
-            "category": "science",
-            "id": "6242cb41d543524f1b19c91c",
-            "correctAnswer": "A brood",
-            "incorrectAnswers": [
-                "A kindle",
-                "A field",
-                "A clowder"
-            ],
-            "question": {
-                "text": "What is the word for a group of hens?"
-            },
-            "difficulty": "hard"
-        },
-        {
-            "category": "science",
-            "id": "622a1c3a7cc59eab6f95107f",
-            "correctAnswer": "Rubber",
-            "incorrectAnswers": [
-                "Plastic",
-                "Iron",
-                "Wood"
-            ],
-            "question": {
-                "text": "To What Is The Process Of Vulcanisation Applied?"
-            },
-            "difficulty": "medium"
-        },
-        {
-            "category": "science",
-            "id": "622a1c3a7cc59eab6f9510ad",
-            "correctAnswer": "Eyes",
-            "incorrectAnswers": [
-                "Stinger",
-                "Wings",
-                "Lungs"
-            ],
-            "question": {
-                "text": "Honey Bees have hair on their ________. "
-            },
-            "difficulty": "hard"
-        },
-        {
-            "category": "science",
-            "id": "622a1c3a7cc59eab6f951018",
-            "correctAnswer": "Tongue",
-            "incorrectAnswers": [
-                "platysma",
-                "buccinator",
-                "epicranius"
-            ],
-            "question": {
-                "text": "What muscle is joined by the lingual nerve to the brain?"
-            },
-            "difficulty": "medium"
-        },
-        {
-            "category": "science",
-            "id": "622a1c377cc59eab6f9504b4",
-            "correctAnswer": "the derivation of a persons character traits, by studying the shape of their skull",
-            "incorrectAnswers": [
-                "rheumatic diseases, a branch of medicine",
-                "the Sun",
-                "the effect of light on chemicals"
-            ],
-            "question": {
-                "text": "What is Phrenology the study of?"
-            },
-            "difficulty": "hard"
-        },
-        {
-            "category": "science",
-            "id": "624333eacfaae40c1296140f",
-            "correctAnswer": "A Kit",
-            "incorrectAnswers": [
-                "A Joey",
-                "An Eaglet",
-                "A Lava"
-            ],
-            "question": {
-                "text": "What would you call a baby ferret?"
-            },
-            "difficulty": "hard"
-        }
-    ]
+  "textRO": [
+    {
+      "Home_Menu_HomeButton": "Acasa",
+      "Home_Menu_ContactButton": "Contact"
+    }
+  ],
+  "textEN": [
+    {
+      "Home_Menu_HomeButton": "Home",
+      "Home_Menu_ContactButton": "Contact"
+    }
+  ],
+  "questions": [
+    {
+      "category": "science",
+      "id": "622a1c377cc59eab6f950473",
+      "correctAnswer": "poisons",
+      "incorrectAnswers": [
+        "life",
+        "vibrations and oscillations in the Sun",
+        "the historical study of languages"
+      ],
+      "question": {
+        "text": "What is Toxicology the study of?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "science",
+      "id": "622a1c377cc59eab6f950463",
+      "correctAnswer": "the study and analysis of animal remains at archaeological sites",
+      "incorrectAnswers": [
+        "men",
+        "rays, usually ionising radiation",
+        "prehistoric life"
+      ],
+      "question": {
+        "text": "What is Zooarchaeology the study of?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "science",
+      "id": "622a1c3a7cc59eab6f950fed",
+      "correctAnswer": "Hippopotamus",
+      "incorrectAnswers": [
+        "Elephant",
+        "Rhinoceros",
+        "American Bison"
+      ],
+      "question": {
+        "text": "Which Is The Second Heaviest Land Animal?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "science",
+      "id": "63e13a25106de6ffa7d4a7a1",
+      "correctAnswer": "Dodecagon",
+      "incorrectAnswers": [
+        "Octagon",
+        "Hexagon",
+        "Triangle"
+      ],
+      "question": {
+        "text": "What is the name of a shape with twelve sides?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "science",
+      "id": "6242cb41d543524f1b19c91c",
+      "correctAnswer": "A brood",
+      "incorrectAnswers": [
+        "A kindle",
+        "A field",
+        "A clowder"
+      ],
+      "question": {
+        "text": "What is the word for a group of hens?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "science",
+      "id": "622a1c3a7cc59eab6f95107f",
+      "correctAnswer": "Rubber",
+      "incorrectAnswers": [
+        "Plastic",
+        "Iron",
+        "Wood"
+      ],
+      "question": {
+        "text": "To What Is The Process Of Vulcanisation Applied?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "science",
+      "id": "622a1c3a7cc59eab6f9510ad",
+      "correctAnswer": "Eyes",
+      "incorrectAnswers": [
+        "Stinger",
+        "Wings",
+        "Lungs"
+      ],
+      "question": {
+        "text": "Honey Bees have hair on their ________. "
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "science",
+      "id": "622a1c3a7cc59eab6f951018",
+      "correctAnswer": "Tongue",
+      "incorrectAnswers": [
+        "platysma",
+        "buccinator",
+        "epicranius"
+      ],
+      "question": {
+        "text": "What muscle is joined by the lingual nerve to the brain?"
+      },
+      "difficulty": "medium"
+    },
+    {
+      "category": "science",
+      "id": "622a1c377cc59eab6f9504b4",
+      "correctAnswer": "the derivation of a persons character traits, by studying the shape of their skull",
+      "incorrectAnswers": [
+        "rheumatic diseases, a branch of medicine",
+        "the Sun",
+        "the effect of light on chemicals"
+      ],
+      "question": {
+        "text": "What is Phrenology the study of?"
+      },
+      "difficulty": "hard"
+    },
+    {
+      "category": "science",
+      "id": "624333eacfaae40c1296140f",
+      "correctAnswer": "A Kit",
+      "incorrectAnswers": [
+        "A Joey",
+        "An Eaglet",
+        "A Lava"
+      ],
+      "question": {
+        "text": "What would you call a baby ferret?"
+      },
+      "difficulty": "hard"
+    }
+  ]
 }

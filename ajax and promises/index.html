@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <div>
+        <h2>Using XMLHttpRequest</h2>
+        <button type="button" onclick="loadAllQuestionsUsingXML()">Load all questions</button>
+        <button type="button" onclick="loadAllQuestionsByDifficultyUsingXML('medium')">Load all medium
+            questions</button>
+        <button type="button" onclick="insertQuestionUsingXML()">Insert question</button>
+        <button type="button" onclick="updateQuestionUsingXML()">Update question</button>
+        <button type="button" onclick="deleteQuestionUsingXML()">Delete question</button>
+    </div>
+    <div id="containerID"></div>
+
+    <script>
+        const apiURLQuestions = "http://localhost:3000/questions";
+
+        function loadAllQuestionsUsingXML() {
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    const questions = JSON.parse(this.responseText);
+
+                    displayQuestions(questions);
+                }
+
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 500) {
+                    // log error
+                }
+            }
+
+            xmlHttp.open("GET", apiURLQuestions);
+            xmlHttp.send();
+        }
+
+        function loadAllQuestionsByDifficultyUsingXML(difficultyLevel) {
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    const questions = JSON.parse(this.responseText);
+
+                    displayQuestions(questions);
+                }
+
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 500) {
+                    // log error
+                }
+            }
+
+            xmlHttp.open("GET", `${apiURLQuestions}?difficulty=${difficultyLevel}`);
+            xmlHttp.send();
+        }
+
+        function insertQuestionUsingXML() {
+            //Data will come from UI, html inputs, forms
+            const newQuestion = {
+                category: "science-test",
+                correctAnswer: "poisons-test",
+                incorrectAnswers: [
+                    "life-test",
+                    "vibrations and oscillations in the Sun-test",
+                    "the historical study of languages-test"
+                ],
+                question: {
+                    text: "What is Toxicology the study of?-test"
+                },
+                difficulty: "hard"
+            };
+
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 201) {
+                    console.log(this.responseText);
+                }
+            }
+
+            xmlHttp.open("POST", apiURLQuestions);
+
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+
+            xmlHttp.send(JSON.stringify(newQuestion));
+        }
+
+        function updateQuestionUsingXML() {
+            //Data will come from UI, html inputs, forms
+            const existingQuestion = {
+                category: "science-test2",
+                correctAnswer: "poisons-test2",
+                incorrectAnswers: [
+                    "life-test2",
+                    "vibrations and oscillations in the Sun-test2",
+                    "the historical study of languages-test2"
+                ],
+                question: {
+                    text: "What is Toxicology the study of?-test2"
+                },
+                difficulty: "hard"
+            };
+
+            //This one will come from DB
+            //Can be keep in a hidden field at UI level
+            const existingQuestionID = "MliHIKV";
+
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log(this.responseText);
+                }
+            }
+
+            xmlHttp.open("PUT", `${apiURLQuestions}/${existingQuestionID}`);
+
+            xmlHttp.setRequestHeader("Content-type", "application/json");
+
+            xmlHttp.send(JSON.stringify(existingQuestion));
+        }
+
+        function deleteQuestionUsingXML() {
+            //This one will come from DB
+            //Can be keep in a hidden field at UI level
+            const existingQuestionID = "MliHIKV";
+
+            const xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function () {
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    console.log(this.responseText);
+                }
+
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 404) {
+                    console.log("Client error!");
+                }
+            }
+
+            xmlHttp.open("DELETE", `${apiURLQuestions}/${existingQuestionID}`);
+            xmlHttp.send();
+        }
+
+        function displayQuestions(questions) {
+            for (let index = 0; index < questions.length; index++) {
+                const paragraph = document.createElement('p');
+                const textContent = document.createTextNode(questions[index].question.text);
+                paragraph.appendChild(textContent);
+
+                if (index % 2 !== 0)
+                    paragraph.style.backgroundColor = "gray";
+
+                document.getElementById('containerID').appendChild(paragraph);
+            }
+        }
+    </script>
+</body>
+
+</html>
