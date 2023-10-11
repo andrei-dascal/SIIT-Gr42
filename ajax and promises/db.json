@@ -11,6 +11,18 @@
       "Home_Menu_ContactButton": "Contact"
     }
   ],
+  "users": [
+    {
+      "username": "andrei.dascal",
+      "password": "test.123",
+      "role": "Admin"
+    },
+    {
+      "username": "test",
+      "password": "test.123",
+      "role": "User"
+    }
+  ],
   "questions": [
     {
       "category": "science",
