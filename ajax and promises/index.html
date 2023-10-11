@@ -13,6 +13,13 @@
         <button type="button" onclick="updateQuestionUsingXML()">Update question</button>
         <button type="button" onclick="deleteQuestionUsingXML()">Delete question</button>
     </div>
+    <div>
+        <h2>Using Promise</h2>
+        <button type="button" onclick="loadAllQuestionsUsingPromise()">Load all questions</button>
+        <button type="button" onclick="insertQuestionUsingPromise()">Insert question</button>
+        <button type="button" onclick="updateQuestionUsingPromise()">Update question</button>
+        <button type="button" onclick="deleteQuestionUsingPromise()">Delete question</button>
+    </div>
     <div id="containerID"></div>
 
     <script>
@@ -141,6 +148,86 @@
 
             xmlHttp.open("DELETE", `${apiURLQuestions}/${existingQuestionID}`);
             xmlHttp.send();
+        }
+
+        function loadAllQuestionsUsingPromise() {
+            fetch(apiURLQuestions)
+                .then(response => response.json())
+                .then(json => { console.log(json) })
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function insertQuestionUsingPromise() {
+            //Data will come from UI, html inputs, forms
+            const newQuestion = {
+                category: "science-test",
+                correctAnswer: "poisons-test",
+                incorrectAnswers: [
+                    "life-test",
+                    "vibrations and oscillations in the Sun-test",
+                    "the historical study of languages-test"
+                ],
+                question: {
+                    text: "What is Toxicology the study of?-test"
+                },
+                difficulty: "hard"
+            };
+
+            fetch(apiURLQuestions, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newQuestion)
+            })
+                .then(response => response.json())
+                .then(question => { console.log(question) })
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function updateQuestionUsingPromise() {
+            //Data will come from UI, html inputs, forms
+            const existingQuestion = {
+                category: "science-test2",
+                correctAnswer: "poisons-test2",
+                incorrectAnswers: [
+                    "life-test2",
+                    "vibrations and oscillations in the Sun-test2",
+                    "the historical study of languages-test2"
+                ],
+                question: {
+                    text: "What is Toxicology the study of?-test2"
+                },
+                difficulty: "hard"
+            };
+
+            //This one will come from DB
+            //Can be keep in a hidden field at UI level
+            const existingQuestionID = "-ZO8BJ7";
+
+            fetch(`${apiURLQuestions}/${existingQuestionID}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(existingQuestion)
+            })
+                .then(response => response.json())
+                .then(question => { console.log(question) })
+                .catch(error => console.log('Error: ' + error));
+        }
+
+        function deleteQuestionUsingPromise() {
+            //This one will come from DB
+            //Can be keep in a hidden field at UI level
+            const existingQuestionID = "tpaukxG";
+
+            fetch(`${apiURLQuestions}/${existingQuestionID}`, {
+                method: "DELETE",
+            })
+                .then(response => response.json())
+                .then(question => { console.log(question) })
+                .catch(error => console.log('Error: ' + error));
         }
 
         function displayQuestions(questions) {
