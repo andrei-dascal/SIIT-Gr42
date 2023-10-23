@@ -1,0 +1,39 @@
+.image-container {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+.image-container .image-avatar {
+    width: 15%;
+    border-radius: 50%;
+}
+
+.login-container,
+.button-container {
+    padding: 16px;
+}
+
+.login-container .input-field {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.login-container .submit-button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.login-container .submit-button:hover {
+    opacity: 0.8;
+}
+
+/* Change styles for extra small screens */
+@media screen and (max-width: 300px) {}

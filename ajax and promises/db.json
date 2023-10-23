@@ -13,12 +13,12 @@
   ],
   "users": [
     {
-      "username": "andrei.dascal",
+      "username": "andrei.dascal@siit.ro",
       "password": "test.123",
       "role": "Admin"
     },
     {
-      "username": "test",
+      "username": "test@test.ro",
       "password": "test.123",
       "role": "User"
     }
