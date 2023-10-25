@@ -1,24 +1,13 @@
-<form [formGroup]="loginFormGroup" (ngSubmit)="login()">
-    <div class="image-container">
-        <img src="assets/img_avatar2.png" alt="Avatar" class="image-avatar">
-    </div>
-    <div class="login-container">
-        <label for="username"><b>{{ Login_Username_Label }}</b></label>
-        <input formControlName="username" class="input-field" type="text" placeholder="Enter Username" name="username">
-
-        <label for="password"><b>{{ Login_Password_Label }}</b></label>
-        <input formControlName="password" class="input-field" type="password" placeholder="Enter Password" name="password">
-
-        <p>
-            <input formControlName="rememberMe" type="checkbox" checked="checked" name="remember"> Remember me
-        </p>
-        <button class="submit-button" type="submit">Login</button>
-        <div *ngIf="!isLoginFormGroupValid">
-            <p>Invalid username or password</p>
-        </div>
-    </div>
-
-    <div class="button-container" style="background-color:#f1f1f1">
-        <span>Forgot <a href="#">password?</a></span>
-    </div>
-</form>
+<login *ngIf="!isLoggedIn" (isUserLoggedIn)="changeUserLoggedInStatus()"></login>
+<ng-container *ngIf="isUserLoggedIn">
+    <menu (isUserLoggedIn)="changeUserLoggedInStatus()"></menu>
+    <section id="article">
+    </section>
+    <section id="blog">
+    </section>
+    <section id="news">
+    </section>
+</ng-container>
+<ng-container *ngIf="isAdminLoggedIn">
+    <p>Admin</p>
+</ng-container>

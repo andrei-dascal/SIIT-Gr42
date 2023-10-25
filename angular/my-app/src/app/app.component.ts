@@ -1,41 +1,32 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserService } from './services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { CookieStorageService } from './services/cookie-storage.service';
+import { UserRole } from './models/user.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  Login_Username_Label = "Username";
-  Login_Password_Label = "Password";
+export class AppComponent implements OnInit {
+  isLoggedIn: boolean;
+  isUserLoggedIn: boolean;
+  isAdminLoggedIn: boolean;
 
-  loginFormGroup: FormGroup = this.formBuilder.group({
-    username: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
-    rememberMe: false
-  });
-
-  isLoginFormGroupValid: boolean = true;
-
-  constructor(private formBuilder: FormBuilder, private userService: UserService) {
+  constructor(private cookieStorageService: CookieStorageService) {
   }
 
-  login() {
-    if (!this.loginFormGroup.valid) {
-      this.isLoginFormGroupValid = false;
-      return;
-    }
+  ngOnInit(): void {
+    this.initUserData();
+  }
 
-    this.isLoginFormGroupValid = true;
+  changeUserLoggedInStatus() {
+    this.initUserData();
+  }
 
-    const username: string = this.loginFormGroup.get('username')?.value;
-    const password: string = this.loginFormGroup.get('password')?.value;
-
-    this.userService.login(username, password).subscribe((isLoggedIn: boolean) => {
-      console.log(isLoggedIn);
-    });
-
+  private initUserData() {
+    //This types of data should be sent encoded on a token
+    this.isLoggedIn = this.cookieStorageService.getCookie("isUserLoggedIn") === 'true';
+    this.isUserLoggedIn = this.isLoggedIn && this.cookieStorageService.getCookie("userRole") === UserRole[UserRole.User];
+    this.isAdminLoggedIn = this.isLoggedIn && this.cookieStorageService.getCookie("userRole") ===  UserRole[UserRole.Admin];
   }
 }

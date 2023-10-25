@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable, map } from "rxjs";
+import { User } from "../models/user.model";
+import { CookieStorageService } from "./cookie-storage.service";
 
 @Injectable()
 export class UserService {
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private cookieStorageService: CookieStorageService) {
 
     }
 
@@ -24,15 +26,20 @@ export class UserService {
     //     xmlHttp.send();
     // }
 
-    public login(username: string, password: string): Observable<boolean> {
-        return this.httpClient.get<any[]>(`${this.apiUsers}?username=${username}`).pipe(map((users: any[]) => {
+    public login(username: string, password: string): Observable<User> {
+        return this.httpClient.get<User[]>(`${this.apiUsers}?username=${username}`).pipe(map((users: User[]) => {
             if(users.length > 1 || users.length === 0)
-                return false;
+                return null;
 
             if(users[0].password === password)
-                return true;
+                return users[0];
 
-            return false;
+            return null;
         }));
+    }
+
+    public logout() {
+        this.cookieStorageService.deleteCookie("isUserLoggedIn");
+        this.cookieStorageService.deleteCookie("userRole");
     }
 }
