@@ -1,0 +1,9 @@
+.change-language-container {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.change-language-container .toggle-text {
+    margin-left: 8px;
+}

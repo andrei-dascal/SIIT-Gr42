@@ -1,12 +1,14 @@
+<!-- Add a toggle to switch to english / ro -->
+<div class="change-language-container">
+    <toggle (switchToggle)="changeLanguage($event)"></toggle>
+    <span [appHighlight]="'red'" class="toggle-text">Change language</span>
+</div>
 <login *ngIf="!isLoggedIn" (isUserLoggedIn)="changeUserLoggedInStatus()"></login>
 <ng-container *ngIf="isUserLoggedIn">
-    <menu (isUserLoggedIn)="changeUserLoggedInStatus()"></menu>
-    <section id="article">
-    </section>
-    <section id="blog">
-    </section>
-    <section id="news">
-    </section>
+    <menu (isUserLoggedIn)="changeUserLoggedInStatus()" [language]="language"></menu>
+    <router-outlet></router-outlet>
+    <img [src]="imageUrl | defaultImage: 'https://t4.ftcdn.net/jpg/05/51/73/07/360_F_551730796_1hsv3NPmpSlhmyWXHtthxK7TfDEka6cQ.jpg'" />
+    <p [appHighlight]="'green'">FOOTER</p>
 </ng-container>
 <ng-container *ngIf="isAdminLoggedIn">
     <p>Admin</p>

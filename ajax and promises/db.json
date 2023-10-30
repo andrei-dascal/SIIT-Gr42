@@ -1,14 +1,18 @@
 {
-  "textRO": [
+  "textContent": [
     {
-      "Home_Menu_HomeButton": "Acasa",
-      "Home_Menu_ContactButton": "Contact"
-    }
-  ],
-  "textEN": [
+      "Language": "1",
+      "Global_Menu_ArticleButton": "Article",
+      "Global_Menu_NewsButton": "News",
+      "Global_Menu_BlogButton": "Blog",
+      "Global_Menu_LogoutButton": "Logout"
+    },
     {
-      "Home_Menu_HomeButton": "Home",
-      "Home_Menu_ContactButton": "Contact"
+      "Language": "2",
+      "Global_Menu_ArticleButton": "Articole",
+      "Global_Menu_NewsButton": "Noutati",
+      "Global_Menu_BlogButton": "Blog",
+      "Global_Menu_LogoutButton": "Deconectare"
     }
   ],
   "users": [
